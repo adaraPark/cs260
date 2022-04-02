@@ -4,8 +4,9 @@
             <div class="people" v-for="person in people" :key="person.id" >
                 <div class="card">
                     <div class="image">
-                        <img class="card-img-top" src="../assets/images/screenshots/runner.jpg" alt="Card image cap">
+                        <!-- <img class="card-img-top" src="../assets/images/screenshots/runner.jpg" alt="Card image cap"> -->
                                 <!-- <img src="'person.image'" />  -->
+                                  <img :src="person.path" /> 
                                 <!-- <img :src="'../assets/images/screenshots/'+person.image">  need to fix this eventually-->
                     </div>
                     <div class="card-body">
@@ -20,13 +21,40 @@
 </template>
 
 <script>
-export default {
-  name: 'ExploreList',
-  props: {
-    people: Array
+// export default {
+//   name: 'ExploreList',
+//   props: {
+//     people: Array
+//   }
+// }
+
+  import axios from 'axios';
+  export default {
+    name: 'ExploreList',
+      data() {
+      return {
+      people: [],
+      }
+    },
+    created() {
+      this.getPeople();
+    },
+    methods: {
+      async getPeople() {
+        try {
+          let response = await axios.get("/api/items");
+          this.people = response.data;
+          return true;
+        } catch (error) {
+          console.log(error);
+        }
+      },
+    }
   }
-}
 </script>
+
+
+
 
 <style scoped>
 .wrapper {

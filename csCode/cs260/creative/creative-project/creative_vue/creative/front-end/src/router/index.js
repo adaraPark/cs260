@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import CoachView from '../views/CoachView.vue'
 import ExploreView from '../views/ExploreView.vue'
+import CreateClassView from '../views/CreateClassView.vue'
 import TermsOfServiceView from '../views/TermsOfServiceView.vue'
 
 Vue.use(VueRouter)
@@ -33,6 +34,11 @@ const routes = [
     path: '/termsofservice',
     name: 'termsofservice',
     component: TermsOfServiceView
+  },
+  {
+    path: '/createclass',
+    name: 'createclass',
+    component: CreateClassView
   }
 ]
 

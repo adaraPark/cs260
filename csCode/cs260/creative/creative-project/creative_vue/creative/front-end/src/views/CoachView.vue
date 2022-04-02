@@ -29,6 +29,14 @@
         </div>
       </div>
       <hr>
+
+      <div class="jumbotron" style="margin: 80px;text-align: center;">
+        <h1 class="display-4">Teach athletes what you know and make money doing it!</h1>
+        <!-- <p class="lead">Be able to connect with your collegiate idols and hear their story! <br> let them teach you all that they know</p> -->
+        <hr class="my-4">
+        <p>Click to create your own class</p>
+        <router-link class="btn btn-primary btn-lg" to="/createclass"> Create </router-link>
+    </div>
     </div>
 </template>
 
